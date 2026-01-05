@@ -8,32 +8,38 @@ public class Diagonal_negativos {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int n = 3;
+		System.out.print("Qual a ordem da matriz?");
+		int n = sc.nextInt();
 		
-		int count = 0;
-		int[][] mat = new int[n][n];
-		
-		for(int i = 0; i < n; i++) {
-			for(int j = 0; j < n; j++) {
-				System.out.println("Elemento ["+i + "," + j+"]");
-				mat[i][j] = sc.nextInt();
-				if(mat[i][j] < 0) {
-					count++;
+		if(n <= 10) {
+			int count = 0;
+			int[][] mat = new int[n][n];
+			
+			for(int i = 0; i < n; i++) {
+				for(int j = 0; j < n; j++) {
+					System.out.println("Elemento ["+i + "," + j+"]");
+					mat[i][j] = sc.nextInt();
+					if(mat[i][j] < 0) {
+						count++;
+					}
 				}
 			}
-		}
-		
-		
-		System.out.println("DIAGONAL PRINCIPAL:");
-		for(int i =0; i<n; i++) {
-			System.out.print(mat[i][i]+ " ");
-		}
-		
-		System.out.println();
+			
+			
+			System.out.println("DIAGONAL PRINCIPAL:");
+			for(int i =0; i<n; i++) {
+				System.out.print(mat[i][i]+ " ");
+			}
+			
+			System.out.println();
 
-		System.out.println("QUANTIDADE DE NEGATIVOS: "+count);
-		
+			System.out.println("QUANTIDADE DE NEGATIVOS: "+count);
+		}else {
+			System.out.println("A matriz tem que ser de no maximo ate 10");
+		}
 
+		
+		sc.close();
 	}
 
 }
