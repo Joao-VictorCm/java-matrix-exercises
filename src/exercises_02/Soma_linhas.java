@@ -14,29 +14,34 @@ public class Soma_linhas {
 		int qtdColunas = sc.nextInt();
 		int[] vect = new int[qtdLinhas];
 
+		if(qtdLinhas <= 10 && qtdColunas  <= 10) {
+			int[][] mat = new int[qtdLinhas][qtdColunas];
 
-		int[][] mat = new int[qtdLinhas][qtdColunas];
-
-		for (int i = 0; i < qtdLinhas; i++) {
-			for (int j = 0; j < qtdColunas; j++) {
-				System.out.println("Digite os elementos da " +(i+1)+"a. linha: ");
-				mat[i][j] = sc.nextInt();
+			for (int i = 0; i < qtdLinhas; i++) {
+				for (int j = 0; j < qtdColunas; j++) {
+					System.out.println("Digite os elementos da " +(i+1)+"a. linha: ");
+					mat[i][j] = sc.nextInt();
+				}
 			}
-		}
 
-		for (int i = 0; i < qtdLinhas; i++) {
-			int somalinhas = 0;
-			for (int j = 0; j < qtdColunas; j++) {
-				somalinhas += mat[i][j];
-			}
-	
-			vect[i] = somalinhas;
-		}
+			for (int i = 0; i < qtdLinhas; i++) {
+				int somalinhas = 0;
+				for (int j = 0; j < qtdColunas; j++) {
+					somalinhas += mat[i][j];
+				}
 		
-		System.out.println("VETOR GERADO:");
-		for(int i =0; i < qtdLinhas; i++) {
-			System.out.println(vect[i]);
+				vect[i] = somalinhas;
+			}
+			
+			System.out.println("VETOR GERADO:");
+			for(int i =0; i < qtdLinhas; i++) {
+				System.out.println(vect[i]);
+			}
+			
+		}else {
+			System.out.println("O numero de linhas e colunas tem que ser de no maximo 10");
 		}
+
 		
 		
 
