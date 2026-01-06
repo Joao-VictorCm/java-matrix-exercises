@@ -8,15 +8,18 @@ public class Soma_linhas {
 		// TODO Auto-generated method stub
 
 		Scanner sc = new Scanner(System.in);
-		int qtdLinhas = 2;
-		int qtdColunas = 3;
-		int vect[];
+		System.out.print("Qual a quantidade de linhas da matriz?");
+		int qtdLinhas = sc.nextInt();
+		System.out.print("Qual a quantidade de colunas da matriz?");
+		int qtdColunas = sc.nextInt();
+		int[] vect = new int[qtdLinhas];
 
 
 		int[][] mat = new int[qtdLinhas][qtdColunas];
 
 		for (int i = 0; i < qtdLinhas; i++) {
 			for (int j = 0; j < qtdColunas; j++) {
+				System.out.println("Digite os elementos da " +(i+1)+"a. linha: ");
 				mat[i][j] = sc.nextInt();
 			}
 		}
@@ -26,10 +29,16 @@ public class Soma_linhas {
 			for (int j = 0; j < qtdColunas; j++) {
 				somalinhas += mat[i][j];
 			}
-			
-			System.out.println(somalinhas);
-			
+	
+			vect[i] = somalinhas;
 		}
+		
+		System.out.println("VETOR GERADO:");
+		for(int i =0; i < qtdLinhas; i++) {
+			System.out.println(vect[i]);
+		}
+		
+		
 
 
 		sc.close();
