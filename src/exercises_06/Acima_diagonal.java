@@ -1,37 +1,33 @@
-package exercises_04;
+package exercises_06;
 
 import java.util.Scanner;
 
-public class Cada_linha {
+public class Acima_diagonal {
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
 		Scanner sc = new Scanner(System.in);
 
 		int n = 4;
-	
 
 		int[][] mat = new int[n][n];
-		
+
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
-				System.out.println("Elemento [" + i + "," + j + "]");
 				mat[i][j] = sc.nextInt();
 			}
 		}
-		
+
+		int soma = 0;
+
 		for (int i = 0; i < n; i++) {
-			int maior = mat[i][0];
-			for(int j =0; j < n; j++) {
-				if(mat[i][j] > maior) {
-					maior = mat[i][j];
-				}
+			for (int j = 0; j < n; j++) {
+				soma += mat[i][j];
 			}
-			
-			System.out.println(maior);
 		}
 
-		
-		sc.close();
+		System.out.println("SOMA DOS ELEMENTOS ACIMA DA DIAGONAL PRINCIPAL = " + soma);
 	}
 
 }
